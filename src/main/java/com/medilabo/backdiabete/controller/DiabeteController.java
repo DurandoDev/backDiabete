@@ -19,7 +19,7 @@ public class DiabeteController {
 	}
 
 	@GetMapping("/risk/{patientId}")
-	public Mono<ResponseEntity<String>> getDiabetesRiskLevel(@PathVariable Long patientId) {
+	public Mono<ResponseEntity<String>> getDiabetesRiskLevel(@PathVariable int patientId) {
 		return diabetesRiskService.determineRiskLevel(patientId)
 				.map(riskLevel -> ResponseEntity.ok().body(riskLevel))
 				.defaultIfEmpty(ResponseEntity.notFound().build());

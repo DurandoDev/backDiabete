@@ -27,7 +27,7 @@ public class DiabetesRiskService {
 		this.notesWebClient = notesWebClient;
 	}
 
-	public Mono<String> determineRiskLevel(Long patientId) {
+	public Mono<String> determineRiskLevel(int patientId) {
 		Mono<Patient> patientMono = this.patientWebClient.get()
 				.uri("/patients/{id}", patientId)
 				.retrieve()
