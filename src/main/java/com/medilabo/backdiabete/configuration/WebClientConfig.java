@@ -10,12 +10,12 @@ public class WebClientConfig {
 
 	@Bean
 	public WebClient patientWebClient(WebClient.Builder builder) {
-		return builder.baseUrl("http://localhost:8082").build();
+		return builder.baseUrl("http://gateway:8080").build();
 	}
 
 	@Bean
 	public WebClient notesWebClient(WebClient.Builder builder) {
-		return builder.baseUrl("http://localhost:8083").build();
+		return builder.baseUrl("http://gateway:8080").build();
 	}
 }
 
